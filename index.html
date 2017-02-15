@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>vue2</title>
+    <script type="text/javascript">
+    	// 只考虑ios
+    	;(function(){
+    		var doc = document, 
+    			docEl = document.documentElement,
+    		 	dpr = window.devicePixelRatio || 1,
+    			scale = 1 / dpr;
+    		var metaEl = document.createElement('meta');
+    		metaEl.setAttribute('name','viewport');
+    		metaEl.setAttribute('content','initial-scale='+scale+',minimum-scale='+scale+',maximum-scale='+scale+',user-scalable=no')
+    		doc.head.appendChild(metaEl);
+
+    		// font-size
+    		docEl.setAttribute('data-dpr',dpr);
+    		
+    		// 等分成16份
+    		var width = docEl ? docEl.clientWidth : doc.body.clientWidth;
+    		docEl.style.fontSize = width / 10 + 'px';
+    	})();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
